@@ -1,12 +1,13 @@
 import pickle
-from tensorflow.keras.models import load_model
 import pandas as pd
 from sklearn.preprocessing import StandardScaler,OneHotEncoder,LabelEncoder
 import streamlit as st
 
 # load the model
+from keras.models import load_model
 
-model=load_model('model.keras')
+model = load_model("model_new.keras")  # load model
+
 
 ## open the pickle files
 
@@ -62,5 +63,4 @@ st.write(f"Probability of churn is {prediction_proba:.2f}")
 if prediction_proba < 0.5:
     st.write('customer is likely to churn')
 else:
-
     st.write('customer is not likely to churn')
