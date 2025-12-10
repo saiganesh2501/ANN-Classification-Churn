@@ -6,7 +6,7 @@ import streamlit as st
 
 # load the model
 
-model=load_model('model.h5')
+model=load_model('model.keras')
 
 ## open the pickle files
 
@@ -62,4 +62,5 @@ st.write(f"Probability of churn is {prediction_proba:.2f}")
 if prediction_proba < 0.5:
     st.write('customer is likely to churn')
 else:
+
     st.write('customer is not likely to churn')
